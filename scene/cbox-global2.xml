@@ -1,0 +1,133 @@
+<scene>
+
+  <image>300 300</image>
+
+  <sampler type="JitteredSampler">
+    <numSamplesU>50</numSamplesU>
+    <numSamplesV>50</numSamplesV>
+  </sampler>
+
+
+  <renderer type="BruteForcePathTracer">
+    <depthLimit>5</depthLimit>
+    <backgroundIllumination>1</backgroundIllumination>
+  </renderer>
+  
+  <camera>
+    <eye>278.0 273.0 -800.0</eye>
+    <target>278.0 273.0 0</target>
+    <up>0 1 0</up>
+    <yFOV>40</yFOV>
+  </camera>
+
+  <material name="white" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.75 0.75 0.75</reflectance>
+    </brdf>
+  </material>
+  <material name="red" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.6 0.05 0.05</reflectance>
+    </brdf>
+  </material>
+  <material name="green" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.1 0.45 0.15</reflectance>
+    </brdf>
+  </material>
+  
+  <material name="grey" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.4 0.4 0.4</reflectance>
+    </brdf>
+  </material>
+  
+  <material name="blue" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.1 0.4 1</reflectance>
+    </brdf>
+  </material>
+  
+    <material name="yellow" type="Homogeneous">
+    <brdf type="Lambertian">
+      <reflectance>0.9 0.8 0.2</reflectance>
+    </brdf>
+  </material>
+
+  <material name="light" type="LambertianEmitter">
+    <brdf type="Lambertian">
+      <reflectance>0.78 0.78 0.78</reflectance>
+    </brdf>
+    <radiance>60 60 60</radiance>
+  </material>
+
+  <surface type="Mesh">
+    <material ref="light" />
+    <data>cbox-light.msh</data>
+  </surface>
+
+  <surface type="Mesh">
+    <material ref="white" />
+    <data>cbox-white.msh</data>
+  </surface>
+
+  
+  <surface type="Mesh">
+    <material ref="blue" />
+    <data>cbox-red.msh</data>
+  </surface>
+
+
+  <surface type="Mesh">
+    <material ref="blue" />
+    <data>cbox-green.msh</data>
+  </surface>
+  
+  <surface type="Mesh">
+    <material ref="yellow" />
+    <frame>
+    -5 0 0 200
+    0 0 5 180
+    0 -5 0 60
+    </frame>
+    <data>chair.msh</data>
+  </surface>
+  
+    <surface type="Mesh">
+    <material ref="yellow" />
+    <frame>
+    -5 0 0 350
+    0 0 5 330
+    0 -5 0 300
+    </frame>
+    <data>chair.msh</data>
+  </surface>
+
+  
+  
+  <surface type="Mesh">
+    <material ref="red" />
+    <frame>
+    -1.8 0 0 335
+    0 0 1.8 410
+    0 -1.8 0 230
+    </frame>
+    <data>teapot.msh</data>
+  </surface>
+  
+
+  
+ <surface type="Sphere">
+    <material type="LambertianEmitter">
+      <radiance>20 20 20</radiance>
+    </material>
+    <center>8 5 0</center>
+    <radius>1</radius>
+  </surface>
+
+  
+  <background type="Uniform">
+    <radiance>0.25 0.25 0.25</radiance>
+  </background>
+
+</scene>
